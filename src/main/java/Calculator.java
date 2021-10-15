@@ -1,3 +1,4 @@
+import java.util.Stack;
 import java.util.UUID;
 
 class Calculator {
@@ -40,23 +41,10 @@ class Calculator {
     etc
      */
     int fibonacciNumberFinder(int n){
-        int num1 = 0, num2 = 1;
-  
-        int counter = 0;
-  
-        // Iterate till counter is N
-        while (counter < n) {
-
-            // Print the number
-            System.out.print(num1 + " ");
-
-            // Swap
-            int num3=num2 + num1;
-            num1=num2;
-            num2=num3;
-            counter=counter + 1;
-        }
-        return num2;
+        if ((n == 0) || (n == 1))
+            return n;
+        else
+            return fibonacciNumberFinder(n - 1) + fibonacciNumberFinder(n - 2);
     }
 
 
@@ -68,22 +56,30 @@ class Calculator {
     if int a = 16 then this method returns: 10000
      */
     String intToBinaryNumber(int n){
-        // Creating and assigning binary array size
-        int[] binary = new int[35];
-        int id = 0;
- 
-        // Number should be positive
+        if (n ==0) {
+            return "0";
+        }
+        Stack<Integer> st = new Stack<>();
+
+        // Number Should be positive
         while (n > 0) {
-            binary[id++] = n % 2;
+
+            // Pushing numbers inside stack that
+            // are divisible by 2
+            st.push(n % 2);
+            // Dividing number by 2
             n = n / 2;
         }
- 
-        StringBuilder sb = new StringBuilder();
-        for (int i = id - 1; i >= 0; i--) {
-            sb.append(binary[i] + "");
-        }
 
-        return sb.toString();
+        StringBuilder answer =new StringBuilder();
+
+        // Checking condition whether stack is empty
+        while (!(st.isEmpty())) {
+
+            // Printing binary number
+            answer.append(st.pop());
+        }
+        return answer.toString();
     }
 
     /*
