@@ -44,7 +44,7 @@ class Calculator {
         int counter = 0;
   
         // Iterate till counter is N
-        while (counter < N) {
+        while (counter < n) {
 
             // Print the number
             System.out.print(num1 + " ");
