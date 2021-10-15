@@ -45,15 +45,16 @@ class Calculator {
   
         // Iterate till counter is N
         while (counter < N) {
-  
+
             // Print the number
             System.out.print(num1 + " ");
-  
+
             // Swap
-            int num3 = num2 + num1;
-            num1 = num2;
-            num2 = num3;
-            counter = counter + 1;
+            int num3=num2 + num1;
+            num1=num2;
+            num2=num3;
+            counter=counter + 1;
+        }
     }
 
 
@@ -70,12 +71,12 @@ class Calculator {
         int id = 0;
  
         // Number should be positive
-        while (num > 0) {
-            binary[id++] = num % 2;
-            num = num / 2;
+        while (n > 0) {
+            binary[id++] = n % 2;
+            n = n / 2;
         }
  
-        StringBuilder sb = new StringBuilder()
+        StringBuilder sb = new StringBuilder();
         for (int i = id - 1; i >= 0; i--) {
             sb.append(binary[i] + "");
         }
