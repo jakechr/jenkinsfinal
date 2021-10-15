@@ -1,3 +1,4 @@
+import java.util.UUID;
 
 class Calculator {
 
@@ -55,6 +56,7 @@ class Calculator {
             num2=num3;
             counter=counter + 1;
         }
+        return num2;
     }
 
 
